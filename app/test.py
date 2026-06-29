@@ -1,10 +1,14 @@
-import requests
+from fastapi.testclient import TestClient
+from app.main import app
 
-resp = requests.get('https://localhost:8000/', params={})
-print(resp.json()[0])
+client = TestClient(app)
 
-resp = requests.get('https://localhost:8000/health', params={})
-print(resp.json()[0])
+def test_base_api():
+    resp = client.get('/')
+    print(resp.json())
 
-resp = requests.get('https://localhost:8000/students', params={})
-print(resp.json()[0])
+    resp = client.get('/health')
+    print(resp.json()[0])
+
+    resp = client.get('/students')
+    print(resp.json()[0])
