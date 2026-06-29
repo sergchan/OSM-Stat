@@ -8,7 +8,7 @@ def test_base_api():
     print(resp.json())
 
     resp = client.get('/health')
-    print(resp.json()[0])
+    print(resp.json())
 
     resp = client.get('/students')
-    print(resp.json()[0])
+    print(resp.json())
