@@ -4,11 +4,13 @@ from main import app
 client = TestClient(app)
 
 def test_base_api():
-    resp = client.get('/')
-    print(resp.json())
+    response = client.get('/')
+    assert response.status_code == 200
+    assert response.json() == {"message": "hallow"}
 
-    resp = client.get('/health')
-    print(resp.json())
+    response = client.get('/health')
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
 
-    resp = client.get('/students')
-    print(resp.json())
+    response = client.get('/students')
+    assert response.status_code == 200
