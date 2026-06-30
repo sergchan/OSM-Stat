@@ -12,5 +12,5 @@ def test_base_api():
     assert response.status_code == 200
     assert response.json() == {"status": "ok"}
 
-    response = client.get('/students')
+    response = client.get('/students/1')
     assert response.status_code == 200
