@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 
 app = FastAPI()
 
-@app.get("/map", responce_class=HTMLResponce)
+@app.get("/map", response_class=HTMLResponse)
 def render_map(lat: float = 40.7128, lon: float = -74.0060):
     # Создаём базовую карту
     m = folium.Map(location=[lat, lon], zoom_start=12)
