@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responces import HTMLResponce
+from fastapi.responses import HTMLResponse
 from utils import json_to_dict_list
 import os
 from typing import Optional
