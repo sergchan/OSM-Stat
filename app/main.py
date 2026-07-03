@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from utils import json_to_dict_list
 import os
 from typing import Optional
@@ -7,7 +8,6 @@ from typing import Optional
 import folium
 
 from pydantic import BaseModel, Field
-
 
 app = FastAPI()
 
@@ -22,7 +22,6 @@ def render_map(lat: float = 40.7128, lon: float = -74.0060):
         popup="Selected Location",
         icon=folium.Icon(color="blue", icon="info-sign")
     ).add_to(m)
-    
     
     return m.get_root().render()
 
