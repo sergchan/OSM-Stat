@@ -14,3 +14,7 @@ def test_base_api():
 
     response = client.get('/students/1')
     assert response.status_code == 200
+
+def test_map():
+    response = client.get("/map")
+    assert response.status_code == 200

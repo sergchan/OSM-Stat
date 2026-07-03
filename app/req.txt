@@ -1,5 +1,6 @@
 fastapi[all]
 requests
 pydantic
+folium
 pytest
 pytest-cov
