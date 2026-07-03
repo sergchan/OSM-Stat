@@ -13,17 +13,17 @@ app = FastAPI()
 
 @app.get("/map", response_class=HTMLResponse)
 def render_map(lat: float = 40.7128, lon: float = -74.0060):
-    # Создаём базовую карту
+    
     m = folium.Map(location=[lat, lon], zoom_start=12)
     
-    # Добавляем маркер
+    
     folium.Marker(
         location=[lat, lon],
         popup="Selected Location",
         icon=folium.Icon(color="blue", icon="info-sign")
     ).add_to(m)
     
-    # Возвращаем HTML-разметку карты
+    
     return m.get_root().render()
 
 @app.get("/health")
