@@ -12,7 +12,7 @@ def test_base_api():
     assert response.status_code == 200
     assert response.json() == {"status": "ok"}
 
-    response = client.get('/students/1')
+    response = client.get('/students')
     assert response.status_code == 200
 
 def test_map():
