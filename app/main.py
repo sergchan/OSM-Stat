@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-from utils import json_to_dict_list
+from app.utils import json_to_dict_list
 import os
 from typing import Optional
 
